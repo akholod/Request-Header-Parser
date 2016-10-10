@@ -5,8 +5,10 @@ const port = process.env.PORT || 8080;
 
 app.get('/', (req, res) => {
     
-   var str = req.headers;
-   res.end(str)
+    res.send(req.headers['user-agent']);
+  res.send(req.headers['accept-language']);
+  res.send(req.headers['user-agent']);
+   res.end('check')
 })
 
 app.use(function(req, res, next) {
