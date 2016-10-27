@@ -1,5 +1,7 @@
-module.exports = function(app) {
-    app.get('/', (req, res) => {
+var express = require('express');
+var router = express.Router();
+   
+router.get('/', (req, res) => {
     
     var resObj = {
         'IP' : req.headers['x-forwarded-for'],
@@ -9,4 +11,6 @@ module.exports = function(app) {
 
    res.end(JSON.stringify(resObj))
 })
-}
+
+
+module.exports = router;
